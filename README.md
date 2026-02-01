@@ -1,5 +1,6 @@
 # 🚀 E-Commerce Strategic Marketing: RFM Customer Segmentation
 *Transforming 500,000+ rows of raw transaction data into actionable business growth insights.
+
 data : https://www.kaggle.com/datasets/carrie1/ecommerce-data*
 
 ## 📌 Project Overview
