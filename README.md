@@ -46,22 +46,25 @@ FROM RFM_Base;
 
 ---
 #### 📊 Dashboard Preview
-Key Insights:
-Champions Segment: Kelompok kecil namun penyumbang revenue terbesar. Membutuhkan program loyalitas eksklusif.
+*Key Insights: *
 
-Potential Loyalists: Pelanggan dengan Recency baik namun Frequency menengah; target utama untuk program upselling.
+>Champions Segment: Kelompok kecil namun penyumbang revenue terbesar. Membutuhkan program loyalitas eksklusif.
 
-Individual Distribution: Scatter plot menampilkan ribuan titik pelanggan secara detail untuk melihat pola belanja secara granular.
+>Potential Loyalists: Pelanggan dengan Recency baik namun Frequency menengah; target utama untuk program upselling.
+
+>Individual Distribution: Scatter plot menampilkan ribuan titik pelanggan secara detail untuk melihat pola belanja secara granular.
 
 ---
 ----
 
-💡 Strategic Recommendations
-Champions (Score 5-5): Berikan akses VIP, reward eksklusif, atau hadiah ulang tahun.
+##💡 Strategic Recommendations
+>Champions (Score 5-5): Berikan akses VIP, reward eksklusif, atau hadiah ulang tahun.
 
-Potential Loyalist: Gunakan rekomendasi produk berdasarkan histori belanja untuk meningkatkan frekuensi.
+>Potential Loyalist: Gunakan rekomendasi produk berdasarkan histori belanja untuk meningkatkan frekuensi.
 
-At Risk: Kirimkan kupon diskon "We Miss You" untuk memicu transaksi kembali dalam 7 hari kedepan.
+>At Risk: Kirimkan kupon diskon "We Miss You" untuk memicu transaksi kembali dalam 7 hari kedepan.
+
+
 ---
 
 ## 🛠️ SQL Implementation Details
