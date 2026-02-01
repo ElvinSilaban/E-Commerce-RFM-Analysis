@@ -26,8 +26,7 @@ Proyek ini menggunakan dataset **Online Retail** dari Kaggle untuk mensimulasika
 
 ## Calculating RFM Metrics & Scoring
 Menggunakan fungsi NTILE(5) untuk membagi pelanggan secara otomatis ke dalam 5 tingkatan peringkat berdasarkan performa mereka.
-
-SQL
+```sql 
 WITH RFM_Base AS (
     SELECT 
         CustomerID,
@@ -42,7 +41,7 @@ SELECT *,
     NTILE(5) OVER (ORDER BY Frequency ASC) AS F_Score,
     NTILE(5) OVER (ORDER BY Monetary ASC) AS M_Score
 FROM RFM_Base;
-
+```
 
 ---
 #### 📊 Dashboard Preview
@@ -57,7 +56,7 @@ FROM RFM_Base;
 ---
 ----
 
-##💡 Strategic Recommendations
+#### 💡 Strategic Recommendations
 >Champions (Score 5-5): Berikan akses VIP, reward eksklusif, atau hadiah ulang tahun.
 
 >Potential Loyalist: Gunakan rekomendasi produk berdasarkan histori belanja untuk meningkatkan frekuensi.
@@ -82,3 +81,4 @@ FROM [dbo].[Ecommerce_Kaggle]
 WHERE CustomerID IS NOT NULL 
   AND Quantity > 0 
   AND UnitPrice > 0;
+```
