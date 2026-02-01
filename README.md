@@ -23,7 +23,22 @@ Proyek ini menggunakan dataset **Online Retail** dari Kaggle untuk mensimulasika
 
 ---
 
+## 🛠️ SQL Implementation Details
 
+### 1. Data Cleaning & Transformation
+Menghapus CustomerID yang hilang dan mengeksklusi transaksi negatif/pembatalan.
+```sql 
+SELECT 
+    CustomerID, 
+    InvoiceDate, 
+    InvoiceNo,
+    (Quantity * UnitPrice) AS SalesValue
+INTO #CleanSales
+FROM [dbo].[Ecommerce_Kaggle]
+WHERE CustomerID IS NOT NULL 
+  AND Quantity > 0 
+  AND UnitPrice > 0;
+```
 ## Calculating RFM Metrics & Scoring
 Menggunakan fungsi NTILE(5) untuk membagi pelanggan secara otomatis ke dalam 5 tingkatan peringkat berdasarkan performa mereka.
 ```sql 
@@ -65,20 +80,3 @@ FROM RFM_Base;
 
 
 ---
-
-## 🛠️ SQL Implementation Details
-
-### 1. Data Cleaning & Transformation
-Menghapus CustomerID yang hilang dan mengeksklusi transaksi negatif/pembatalan.
-```sql 
-SELECT 
-    CustomerID, 
-    InvoiceDate, 
-    InvoiceNo,
-    (Quantity * UnitPrice) AS SalesValue
-INTO #CleanSales
-FROM [dbo].[Ecommerce_Kaggle]
-WHERE CustomerID IS NOT NULL 
-  AND Quantity > 0 
-  AND UnitPrice > 0;
-```
