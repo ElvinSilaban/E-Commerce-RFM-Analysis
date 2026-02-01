@@ -24,7 +24,7 @@ Proyek ini menggunakan dataset **Online Retail** dari Kaggle untuk mensimulasika
 ---
 
 
-2. Calculating RFM Metrics & Scoring
+## Calculating RFM Metrics & Scoring
 Menggunakan fungsi NTILE(5) untuk membagi pelanggan secara otomatis ke dalam 5 tingkatan peringkat berdasarkan performa mereka.
 
 SQL
@@ -42,7 +42,10 @@ SELECT *,
     NTILE(5) OVER (ORDER BY Frequency ASC) AS F_Score,
     NTILE(5) OVER (ORDER BY Monetary ASC) AS M_Score
 FROM RFM_Base;
-📊 Dashboard Preview
+
+
+---
+#### 📊 Dashboard Preview
 Key Insights:
 Champions Segment: Kelompok kecil namun penyumbang revenue terbesar. Membutuhkan program loyalitas eksklusif.
 
@@ -50,12 +53,16 @@ Potential Loyalists: Pelanggan dengan Recency baik namun Frequency menengah; tar
 
 Individual Distribution: Scatter plot menampilkan ribuan titik pelanggan secara detail untuk melihat pola belanja secara granular.
 
+---
+----
+
 💡 Strategic Recommendations
 Champions (Score 5-5): Berikan akses VIP, reward eksklusif, atau hadiah ulang tahun.
 
 Potential Loyalist: Gunakan rekomendasi produk berdasarkan histori belanja untuk meningkatkan frekuensi.
 
 At Risk: Kirimkan kupon diskon "We Miss You" untuk memicu transaksi kembali dalam 7 hari kedepan.
+---
 
 ## 🛠️ SQL Implementation Details
 
