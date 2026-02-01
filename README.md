@@ -21,24 +21,6 @@ Proyek ini menggunakan dataset **Online Retail** dari Kaggle untuk mensimulasika
 > 
 > **Analyst:** "Segmen **'At Risk'** adalah yang paling kritis. Mereka memiliki frekuensi belanja tinggi di masa lalu tetapi sudah lama tidak bertransaksi. Kita perlu kampanye intervensi sebelum mereka berpindah ke kompetitor."
 
----
-
-## 🛠️ SQL Implementation Details
-
-### 1. Data Cleaning & Transformation
-Menghapus CustomerID yang hilang dan mengeksklusi transaksi negatif/pembatalan.
-```sql
-SELECT 
-    CustomerID, 
-    InvoiceDate, 
-    InvoiceNo,
-    (Quantity * UnitPrice) AS SalesValue
-INTO #CleanSales
-FROM [dbo].[Ecommerce_Kaggle]
-WHERE CustomerID IS NOT NULL 
-  AND Quantity > 0 
-  AND UnitPrice > 0;
-
 
 ##Calculating RFM Metrics & Scoring
 Menggunakan fungsi NTILE(5) untuk membagi pelanggan secara otomatis ke dalam 5 tingkatan peringkat berdasarkan performa mereka.
@@ -74,3 +56,24 @@ Champions (Score 5-5): Berikan akses VIP, reward eksklusif, atau hadiah ulang ta
 Potential Loyalist: Gunakan rekomendasi produk berdasarkan histori belanja untuk meningkatkan frekuensi.
 
 At Risk: Kirimkan kupon diskon "We Miss You" untuk memicu transaksi kembali dalam 7 hari kedepan.
+
+
+---
+
+## 🛠️ SQL Implementation Details
+
+### 1. Data Cleaning & Transformation
+Menghapus CustomerID yang hilang dan mengeksklusi transaksi negatif/pembatalan.
+```sql
+SELECT 
+    CustomerID, 
+    InvoiceDate, 
+    InvoiceNo,
+    (Quantity * UnitPrice) AS SalesValue
+INTO #CleanSales
+FROM [dbo].[Ecommerce_Kaggle]
+WHERE CustomerID IS NOT NULL 
+  AND Quantity > 0 
+  AND UnitPrice > 0;
+---
+
